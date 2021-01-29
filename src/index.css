@@ -54,6 +54,10 @@ body {
   width: 100%;
 }
 
+.btn.close {
+  background-color: red;
+}
+
 .task {
   background: #f4f4f4;
   margin: 5px;

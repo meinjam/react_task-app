@@ -1,8 +1,10 @@
-const Header = () => {
+const Header = ({ forToggle, toggleAdd }) => {
   return (
     <header className='header'>
       <h1>Task Tracker App</h1>
-      <button className='btn'>Add</button>
+      <button className={`btn ${toggleAdd ? 'close' : ''}`} onClick={forToggle}>
+        {toggleAdd ? 'Close' : 'Add'}
+      </button>
     </header>
   );
 };

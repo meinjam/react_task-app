@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 
 function App() {
+  const [toggleAdd, setToggleAdd] = useState(false);
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -25,6 +26,7 @@ function App() {
     },
   ]);
 
+  //Add Task
   const addTask = (task) => {
     // console.log(task);
     setTasks([...tasks, task]);
@@ -41,10 +43,14 @@ function App() {
     console.log(id);
   };
 
+  //Toggle Add form
+  const forToggle = () => {
+    setToggleAdd(!toggleAdd);
+  };
   return (
     <div className='container'>
-      <Header />
-      <AddTask addTask={addTask} />
+      <Header forToggle={forToggle} toggleAdd={toggleAdd} />
+      {toggleAdd && <AddTask addTask={addTask} />}
       {tasks.length ? (
         <Tasks
           tasks={tasks}
