@@ -40,13 +40,19 @@ function App() {
 
   //Double Click
   const doubleClick = (id) => {
-    console.log(id);
+    //console.log(id);
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    );
   };
 
   //Toggle Add form
   const forToggle = () => {
     setToggleAdd(!toggleAdd);
   };
+
   return (
     <div className='container'>
       <Header forToggle={forToggle} toggleAdd={toggleAdd} />

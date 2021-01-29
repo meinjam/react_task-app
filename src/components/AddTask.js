@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const AddTask = ({ addTask, forToggle }) => {
   const [text, setText] = useState('');
@@ -21,7 +22,8 @@ const AddTask = ({ addTask, forToggle }) => {
       alert('Please add text.');
       return false;
     }
-    const id = Math.floor(Math.random() * 10000 + 1);
+    // const id = Math.floor(Math.random() * 10000 + 1);
+    const id = uuidv4();
     const task = { id, text, day, reminder };
     addTask(task);
     setText('');
