@@ -50,7 +50,7 @@ function App() {
   return (
     <div className='container'>
       <Header forToggle={forToggle} toggleAdd={toggleAdd} />
-      {toggleAdd && <AddTask addTask={addTask} />}
+      {toggleAdd && <AddTask addTask={addTask} forToggle={forToggle} />}
       {tasks.length ? (
         <Tasks
           tasks={tasks}

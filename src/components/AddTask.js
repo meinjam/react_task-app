@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const AddTask = ({ addTask }) => {
+const AddTask = ({ addTask, forToggle }) => {
   const [text, setText] = useState('');
   const [day, setDay] = useState('');
   const [reminder, setReminder] = useState(false);
@@ -27,6 +27,7 @@ const AddTask = ({ addTask }) => {
     setText('');
     setDay('');
     setReminder(false);
+    forToggle();
   };
 
   return (
